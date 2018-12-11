@@ -1,3 +1,28 @@
+# Notes for this fork
+I created this fork to handle UART flashing of the SAMD21 (more specifically the itsybitsy m0). I'm using the bossac tool to do the flashing.
+
+### UART pins
+Currently the config files are setup to use SCL and SCA on the itsybitsy m0 for UART flashing.
+```
+SCA -> Host RXI
+SCL -> Host TXO
+```
+
+### Bossac sample commands
+```
+bossac --debug --port=tty.usbserial --info
+bossac --debug --port=tty.usbserial --offset=0x2000 --erase --write --verify --reset BlinkSlow.ino.itsybitsy_m0.bin
+```
+
+### Known issues with UART flashing
+Not sure why but the first attempt to read or write to the board will fail while in UART bootloader mode. My current workaround is to first send an info command (which will fail) and then do the write to update SAMD21 firmware.
+
+### Warnings
+Using this bootloader firmware will disable the drag and drop, flash drive type of updating. Once this UART bootloader has been flashed to the board you will need to use some type of debugger (JTAG, Atmel ICE, etc) to reflash to bootloader.
+
+
+----------------------------------------------------------
+
 # UF2 Bootloader
 
 This repository contains a bootloader, derived from Atmel's SAM-BA,
