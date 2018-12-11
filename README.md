@@ -20,6 +20,10 @@ Not sure why but the first attempt to read or write to the board will fail while
 ### Warnings
 Using this bootloader firmware will disable the drag and drop, flash drive type of updating. Once this UART bootloader has been flashed to the board you will need to use some type of debugger (JTAG, Atmel ICE, etc) to reflash to bootloader.
 
+### Prerequisites for running 'make run'
+The make run command looks for a specific version of openocd (0.10.0-arduino1-static) in your 'Arduino15' directory. My Arduino IDE only had version 0.9.0-arduino6-static. To get the 0.10.0 version to install I had to go into the Boards Manager and add the board type 'Arduino nRF52 Boards'. The tools packaged with this board type include openocd 0.10.0.
+
+
 
 ----------------------------------------------------------
 
