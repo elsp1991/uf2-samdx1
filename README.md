@@ -2,10 +2,25 @@
 I created this fork to handle UART flashing of the SAMD21 (more specifically the itsybitsy m0). I'm using the bossac tool to do the flashing.
 
 ### UART pins
-Currently the config files are setup to use SCL and SCA on the itsybitsy m0 for UART flashing.
+There a few options for the UART pins on the itsybitsy m0 for UART flashing.
+
+The SERCOM3 board definition uses these pins:
 ```
 SCA -> Host RXI
 SCL -> Host TXO
+```
+
+The SERCOM0 board definition uses these pins:
+```
+D4 -> Host RXI
+D3 -> Host TXO
+```
+
+### Compiling the bootloader
+There are UART specific board definitions for the itsybitsy M0. To compile:
+```
+make itsybitsy_m0_UART_SERCOM3
+make itsybitsy_m0_UART_SERCOM0
 ```
 
 ### Bossac sample commands
