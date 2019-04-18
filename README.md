@@ -19,8 +19,8 @@ D3 -> Host TXO
 ### Compiling the bootloader
 There are UART specific board definitions for the itsybitsy M0. To compile:
 ```
-make itsybitsy_m0_UART_SERCOM3
-make itsybitsy_m0_UART_SERCOM0
+make BOARD=itsybitsy_m0_UART_SERCOM3
+make BOARD=itsybitsy_m0_UART_SERCOM0
 ```
 
 ### Bossac sample commands
@@ -33,7 +33,7 @@ bossac --debug --port=tty.usbserial --offset=0x2000 --erase --write --verify --r
 Not sure why but the first attempt to read or write to the board will fail while in UART bootloader mode. My current workaround is to first send an info command (which will fail) and then do the write to update SAMD21 firmware.
 
 ### Warnings
-Using this bootloader firmware will disable the drag and drop, flash drive type of updating. Once this UART bootloader has been flashed to the board you will need to use some type of debugger (JTAG, Atmel ICE, etc) to reflash to bootloader.
+Using this bootloader firmware will disable the drag and drop, flash drive type of updating. Once this UART bootloader has been flashed to the board you will need to a SWD debugger (Atmel ICE or other CMSIS-DAP compatible) to reflash to bootloader with `make burn`. For example, `make BOARD=itsybitsy_m0_UART_SERCOM3 burn`.
 
 ### Prerequisites for running 'make run'
 The make run command looks for a specific version of openocd (0.10.0-arduino1-static) in your 'Arduino15' directory. My Arduino IDE only had version 0.9.0-arduino6-static. To get the 0.10.0 version to install I had to go into the Boards Manager and add the board type 'Arduino nRF52 Boards'. The tools packaged with this board type include openocd 0.10.0.
