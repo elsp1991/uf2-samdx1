@@ -6,7 +6,7 @@ There a few options for the UART pins on the itsybitsy m0 for UART flashing.
 
 The SERCOM3 board definition uses these pins:
 ```
-SCA -> Host RXI
+SDA -> Host RXI
 SCL -> Host TXO
 ```
 
