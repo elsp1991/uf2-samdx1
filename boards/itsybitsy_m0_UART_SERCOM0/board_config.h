@@ -23,8 +23,8 @@
 #define BOOT_USART_PAD_SETTINGS           UART_RX_PAD1_TX_PAD0
 #define BOOT_USART_PAD3                   PINMUX_UNUSED
 #define BOOT_USART_PAD2                   PINMUX_UNUSED
-#define BOOT_USART_PAD1                   PINMUX_PA09C_SERCOM0_PAD1 //Pin D4 on ItsyBitsy M0 -> HOST RXI
-#define BOOT_USART_PAD0                   PINMUX_PA08C_SERCOM0_PAD0 //Pin D3 on ItsyBitsy M0 -> HOST TXO
+#define BOOT_USART_PAD1                   PINMUX_PA09C_SERCOM0_PAD1 //Pin D3 on ItsyBitsy M0 -> HOST TXO
+#define BOOT_USART_PAD0                   PINMUX_PA08C_SERCOM0_PAD0 //Pin D4 on ItsyBitsy M0 -> HOST RXI
 #define BOOT_GCLK_ID_CORE                 SERCOM0_GCLK_ID_CORE
 #define BOOT_GCLK_ID_SLOW                 SERCOM0_GCLK_ID_SLOW
 
