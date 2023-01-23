@@ -214,6 +214,7 @@ int main(void) {
 
             main_b_cdc_enable = true;
         }
+        */
 
 #if USE_MONITOR
         // Check if a USB enumeration has succeeded
@@ -225,7 +226,6 @@ int main(void) {
                 sam_ba_monitor_run();
             }
         }
-        */
 #if USE_UART
         /* Check if a '#' has been received */
         if (!main_b_cdc_enable && usart_sharp_received()) {
