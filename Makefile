@@ -15,7 +15,7 @@ WFLAGS = \
 -Wimplicit-int -Wmain -Wparentheses -Wsequence-point -Wreturn-type -Wswitch \
 -Wtrigraphs -Wunused -Wuninitialized -Wunknown-pragmas -Wfloat-equal -Wno-undef \
 -Wbad-function-cast -Wwrite-strings -Waggregate-return \
--Wformat -Wmissing-format-attribute \
+-Wformat -Wmissing-format-attribute -Wno-deprecated\
 -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs \
 -Wlong-long -Wunreachable-code -Wcast-align \
 -Wno-missing-braces -Wno-overflow -Wno-shadow -Wno-attributes -Wno-packed -Wno-pointer-sign
